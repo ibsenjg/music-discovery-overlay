@@ -1,0 +1,74 @@
+{
+  "name": "music-discovery-overlay",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "npm@11.16.0",
+  "description": "A privacy-first, on-device music discovery companion for Spotify Web.",
+  "author": {
+    "name": "Ibsen Gonzalez",
+    "url": "https://github.com/ibsenjg"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibsenjg/music-discovery-overlay.git"
+  },
+  "homepage": "https://github.com/ibsenjg/music-discovery-overlay#readme",
+  "bugs": {
+    "url": "https://github.com/ibsenjg/music-discovery-overlay/issues"
+  },
+  "keywords": [
+    "chrome-extension",
+    "music-discovery",
+    "on-device-ai",
+    "privacy",
+    "spotify"
+  ],
+  "engines": {
+    "node": ">=24",
+    "npm": ">=11"
+  },
+  "scripts": {
+    "build": "vite build && vite build --config vite.content.config.ts",
+    "dev:mock": "vite --config vite.mock.config.ts",
+    "screenshots": "node scripts/capture-readme-screenshots.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "npm run build && playwright test --workers=1",
+    "test:e2e:ui": "npm run build && playwright test --ui --workers=1",
+    "verify": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run test:e2e",
+    "version:check": "node scripts/version.mjs --check",
+    "version:set": "node scripts/version.mjs",
+    "release:check": "node scripts/check-release-tag.mjs",
+    "package": "npm run verify && npm run version:check && node scripts/package-extension.mjs"
+  },
+  "dependencies": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "styled-components": "6.5.3"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.12.1",
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.62.1",
+    "@testing-library/jest-dom": "7.0.0",
+    "@testing-library/react": "16.3.2",
+    "@testing-library/user-event": "14.6.3",
+    "@types/chrome": "0.2.5",
+    "@types/node": "26.1.2",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "eslint": "10.8.0",
+    "globals": "17.9.0",
+    "jsdom": "30.0.1",
+    "prettier": "3.9.6",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.66.0",
+    "vite": "8.2.0",
+    "vitest": "4.1.10"
+  }
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify-like fixture</title>
+    <link rel="stylesheet" href="/src/mock/mock.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/mock/" aria-label="Fixture home">M</a>
+      <label class="search-label">
+        <span class="sr-only">What do you want to play?</span>
+        <input
+          data-testid="spotify-search-input"
+          role="combobox"
+          type="search"
+          aria-label="What do you want to play?"
+          placeholder="What do you want to play?"
+        />
+      </label>
+      <button
+        class="profile-fixture"
+        data-testid="user-widget-link"
+        type="button"
+        aria-label="Sanitized profile control"
+      ></button>
+    </header>
+    <aside class="library-fixture" aria-label="Your Library">
+      <h2>Your Library</h2>
+      <input
+        class="library-search"
+        role="searchbox"
+        aria-label="Type to filter your library. The list of content below will update as you type."
+        placeholder="Search in Your Library"
+      />
+    </aside>
+    <main>
+      <h1>Browse all</h1>
+      <p>This sanitized fixture contains no Spotify account or catalog data.</p>
+      <output id="fixture-result" aria-live="polite"></output>
+    </main>
+    <script type="module" src="/src/mock/main.ts"></script>
+  </body>
+</html>

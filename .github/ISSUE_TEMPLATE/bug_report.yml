@@ -1,0 +1,71 @@
+name: Bug report
+description: Report a reproducible problem in the extension or sanitized fixture.
+title: '[Bug]: '
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Do not include credentials, account data, avatars, listening history, or
+        vulnerability details. Use the private process in SECURITY.md for security reports.
+  - type: input
+    id: version
+    attributes:
+      label: Extension version or commit
+      placeholder: 0.1.0 or commit identifier
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Chrome version and operating system.
+      placeholder: Chrome 149, macOS 15
+    validations:
+      required: true
+  - type: dropdown
+    id: provider
+    attributes:
+      label: Discovery provider
+      options:
+        - On-device AI
+        - Guided discovery
+        - Both or not applicable
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      placeholder: Tell us the smallest reliable sequence.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized evidence
+      description: Optional console output or fixture screenshot with personal data removed.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues.
+          required: true
+        - label: I removed personal, account, and credential data.
+          required: true
+        - label: This is not a private security report.
+          required: true
