@@ -47,7 +47,7 @@
     "package": "npm run verify && npm run version:check && node scripts/package-extension.mjs"
   },
   "dependencies": {
-    "react": "19.2.8",
+    "react": "19.3.0",
     "react-dom": "19.2.8",
     "styled-components": "6.5.3"
   },
@@ -60,7 +60,7 @@
     "@testing-library/user-event": "14.6.3",
     "@types/chrome": "0.2.5",
     "@types/node": "26.1.2",
-    "@types/react": "19.2.18",
+    "@types/react": "19.3.0",
     "@types/react-dom": "19.2.4",
     "eslint": "10.8.0",
     "globals": "17.9.0",
